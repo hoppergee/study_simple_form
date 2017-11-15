@@ -15,6 +15,8 @@ module SimpleForm
           text_area(@attribute, html_options)
         when :datetime
           date_select(@attribute, @options[:options], html_options)
+        when :hidden
+          hidden_field(@attribute, html_options)
         else text_field(@attribute, html_options)
       end
     end
