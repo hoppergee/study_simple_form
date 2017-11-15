@@ -22,7 +22,7 @@ module SimpleForm
       default = @object.try(:human_attribute_name, @attribute.to_s) || @attribute.to_s.humanize
       I18n.t("#{@object_name}.#{@attributes}", :scope => :"views.labels", :default => default)
       lookups = [:"#{@object_name}.#{@attribute}", :"#{@attribute}", default]
-      I18n.t(lookups.shift, :scope => :"views.labels", :default => lookups)
+      I18n.t(lookups.shift, :scope => :"simple_form.labels", :default => lookups)
     end
 
     def translate_required_string
