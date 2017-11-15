@@ -4,9 +4,8 @@ module SimpleForm
     private
 
     def generate_label
-      return '' if @options[:label] == false
-      retrun '' if skip_label?
-      html_options = { :class => "#{@input_type} #{required_class}".strip }
+      return '' if skip_label?
+      html_options = { :class => default_css_classes }
       html_options[:for] = @options[:html][:id] if @options.key?(:html)
       label(@attribute, label_text, html_options)
     end
